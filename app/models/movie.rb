@@ -2,6 +2,8 @@ class Movie < ApplicationRecord
   has_many :bookmarks
 
   before_destroy :check_for_bookmarks_references
+  validates :title, uniqueness: true
+  validates :overview, uniqueness: true
 
   private
 
